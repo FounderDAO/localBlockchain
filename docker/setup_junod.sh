@@ -2,10 +2,10 @@
 #set -o errexit -o nounset -o pipefail
 
 PASSWORD=${PASSWORD:-1234567890}
-STAKE=${STAKE_TOKEN:-ustake}
-FEE=${FEE_TOKEN:-ucosm}
-CHAIN_ID=${CHAIN_ID:-testing}
-MONIKER=${MONIKER:-node001}
+STAKE=${STAKE_TOKEN:-uuzst}
+FEE=${FEE_TOKEN:-uust}
+CHAIN_ID=${CHAIN_ID:-devops}
+MONIKER=${MONIKER:-founder_node}
 KEYRING="--keyring-backend test"
 BLOCK_GAS_LIMIT=${GAS_LIMIT:-100000000} # should mirror mainnet
 
@@ -47,12 +47,12 @@ if ! junod keys show validator $KEYRING; then
   (echo "$PASSWORD"; echo "$PASSWORD") | junod keys add validator $KEYRING
 
   # hardcode the validator account for this instance
-  echo "$PASSWORD" | junod add-genesis-account validator "1000000000$STAKE,1000000000$FEE" $KEYRING
+  echo "$PASSWORD" | junod add-genesis-account validator "10000000000$STAKE,10000000000$FEE" $KEYRING
 
   # (optionally) add a few more genesis accounts
   for addr in "$@"; do
     echo $addr
-    junod add-genesis-account "$addr" "1000000000$STAKE,1000000000$FEE"
+    junod add-genesis-account "$addr" "10000000000$STAKE,10000000000$FEE"
   done
 
   # submit a genesis validator tx

@@ -70,16 +70,7 @@ and to provide utility in the deployment and execution of smart contracts.
 
 ⚪️ Decentralized
 
-
-
-
-
 ![c22](https://user-images.githubusercontent.com/79812965/131373499-81549b6c-6ab6-49fa-9d2f-4f7b79f74509.jpg)
-
-
-
-
-
 
 **Tokenomics & reward shedule** (updated on 24.07.2021)
 
